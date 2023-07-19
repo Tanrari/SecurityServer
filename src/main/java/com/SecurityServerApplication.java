@@ -1,13 +1,16 @@
 package com;
-
+import com.example.config.User;
 import com.example.repo.UserRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.userdetails.User;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.Collection;
+
 
 @SpringBootApplication
 public class SecurityServerApplication {

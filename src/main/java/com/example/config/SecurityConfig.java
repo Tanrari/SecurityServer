@@ -20,18 +20,15 @@ public class SecurityConfig {
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
             throws Exception {
         return http
-                .authorizeRequests(authorizeRequests ->
+                .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests.anyRequest().authenticated()
-                )
-
-                .formLogin()
-
+                ).formLogin()
                 .and().build();
     }
 
     @Bean
     UserDetailsService userDetailsService(UserRepository userRepo) {
-        return username -> userRepo.findByUsername(username);
+        return userRepo::findByUsername;
     }
 
     @Bean

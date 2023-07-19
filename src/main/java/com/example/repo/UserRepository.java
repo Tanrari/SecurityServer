@@ -1,10 +1,11 @@
 package com.example.repo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.security.core.userdetails.User;
 
-public interface UserRepository extends CrudRepository<com.example.config.User,Long> {
+import com.example.config.User;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Long> {
 
     User findByUsername(String username);
+
 }
